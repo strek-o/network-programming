@@ -6,9 +6,6 @@
 #include <string.h>
 #include <unistd.h>
 
-
-#define BUFFER_SIZE 1024
-
 int main(int argc, char *argv[]) {
   if (argc != 3) {
     fprintf(stderr, "Usage: %s <IP address> <port>\n", argv[0]);
@@ -40,7 +37,7 @@ int main(int argc, char *argv[]) {
     exit(EXIT_FAILURE);
   }
 
-  int size = 16;
+  int size = 1024;
   unsigned char buffer[size];
   while ((cnt = recv(clt_sock, buffer, size - 1, 0)) > 0) {
     buffer[cnt] = '\0';

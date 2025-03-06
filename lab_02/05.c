@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
       exit(EXIT_FAILURE);
     }
 
-    char message[] = "Hello, world!\r\n";
+    char message[] = "[TCP] Hello, world!\r\n";
     send(clt_sock, message, strlen(message), 0);
     close(clt_sock);
   }
